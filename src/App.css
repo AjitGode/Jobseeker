@@ -1,0 +1,628 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body,html {
+  font-family: Arial, sans-serif;
+  /* background-color: #f4f4f4;  */
+  background: url('../assets/pexels-andreea.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Adjust as necessary */
+  backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  background-color: #f4f4f4;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #a6cbf7;
+  color: white;
+  /* padding: 20px; */
+  position: fixed;
+  /* top: 100px; */
+  padding: 10px;
+  /* left: 0; */
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar label {
+  flex-wrap: wrap;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.sidebar h2{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar input[type="range"] {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  /* Add these styles to make the range input movable */
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.sidebar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border-radius: 50%;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.sidebar input[type="range"]:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.sidebar span {
+  font-size: 14px;
+  color: #666;
+}
+
+.content {
+  margin-left: 270px; /* Sidebar width + some margin */
+  padding: 20px;
+  flex: 1;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.App button {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  background-color: #0af191;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.App button img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px; 
+  display: flex;
+  align-items: center; 
+  
+}
+
+.App span{
+  display: flex;
+  align-items: center; 
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.App h1{
+  font-size: 24px;
+  font-weight: bold;
+  margin: auto;
+  padding: 10px;
+
+}
+
+.header-icon{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+header .logo {
+  width: 30px;
+  height: 30px;
+  /* margin-right: 10px; */
+}
+
+.header-user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.user-logo{
+  display: flex;
+  align-items: center; 
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+ 
+
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  position:sticky; /* Make the header sticky */
+  top: 0; /* Stick the header to the top */
+  z-index: 1000; /* Ensure the header stays above other content */
+  flex-wrap: wrap;
+}
+
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: left; /* Align content to the left */
+}
+
+.login-form h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading */
+}
+
+.login-form img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+.login-form input {
+  width: calc(100% - 20px);
+  max-width: 400px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+}
+.login-form input:focus{
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+
+}
+.login-form button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto; /* Center the button */
+  width: calc(100% - 20px);
+  max-width: 300px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login-form button:hover {
+  background-color: #1c7ed6;
+}
+.register-link{
+  display: block;
+  margin: 10px auto; 
+  max-width: 300px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.jobseekers-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.jobseeker-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.profile-image {
+  margin-bottom: 15px;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blur img {
+  filter: blur(8px);
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.blur{
+  filter: blur(4px);
+}
+
+p {
+  color: #666;
+  font-size: 16px;
+}
+
+.add-jobseeker-button{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ margin-left: 35px;
+ margin-bottom: 30px;
+ padding: auto;
+}
+.add-jobseeker-button img{
+  margin-right: 10px;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 0 15px; /* Add some padding on mobile */
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px; /* Limit the width of the search bar */
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.search-bar:focus {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+/* Add this to your App.css */
+
+.register-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.register-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-form input,
+.register-form select {
+  width: calc(100% - 20px);
+  max-width: 400px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.register-form button {
+  display: block;
+  width: calc(100% - 20px);
+  max-width: 300px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px auto; /* Center the button */
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.register-form button:hover {
+  background-color: #1c7ed6;
+}
+
+.login-link{
+  text-decoration: none;
+}
+.success {
+  color: green;
+  margin-top: 10px;
+}
+
+/* Modal Container */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.close {
+  color: #333;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Modal Header */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+  border-color: #0af191;
+  outline: none;
+}
+
+/* Submit Button */
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0af191;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #08d47c;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .modal-content h2 {
+    font-size: 20px;
+  }
+  
+  .modal-content button {
+    font-size: 14px;
+  }
+}
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    transform: translateX(-100%);
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 150px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+} */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    min-width: fit-content;
+    min-height: fit-content;
+    position: relative; 
+    transform: translateX(0);
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: space-between; 
+    background-color: #a6cbf7; 
+    padding: 10px; 
+    display: flex; 
+  }
+
+  .sidebar > * {
+    margin-right: 20px; 
+  }
+
+  .content {
+    margin-left: 0;
+    margin-top: 0; 
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar h2{
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Responsive search bar */
+@media (min-width: 768px) {
+  .search-bar-container {
+    margin-bottom: 30px;
+  }
+
+  .search-bar {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+}
+
+/* @media (min-width:768px){
+  .login-form button{
+    min-width: fit-content;
+    font-size: 10px;
+
+  }
+  
+} */
