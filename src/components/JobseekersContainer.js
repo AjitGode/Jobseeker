@@ -19,15 +19,17 @@ const JobseekersContainer = ({ jobseekers, userType, setShowAddJobseeker,filtere
           Add Jobseeker
         </button>
       )}
-       <div className="search-bar-container">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-          placeholder="Search by name or role"
-          className="search-bar"
-        />
-      </div>
+      {userType === 'superuser' && (
+        <div className="search-bar-container">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+            placeholder="Search by name or role"
+            className="search-bar"
+          />
+        </div>
+      )}
       <div className="jobseekers-container">
         {(hasFiltersApplied ? filteredJobseekers : jobseekers).map((jobseeker) => (
           <JobseekerCard key={jobseeker.id} jobseeker={jobseeker} userType={userType} />

@@ -22,17 +22,14 @@ body,html {
 }
 
 .sidebar {
+  position:fixed;
   width: 250px;
   background-color: #a6cbf7;
   color: white;
-  /* padding: 20px; */
-  position: fixed;
-  /* top: 100px; */
   padding: 10px;
-  /* left: 0; */
-  min-height: 100vh;
+  min-height: 150vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 }
@@ -48,6 +45,10 @@ body,html {
 }
 
 .sidebar h2{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #000;
   display: flex;
   flex-wrap: wrap;
 }
@@ -179,7 +180,7 @@ header {
   border-bottom: 2px solid #ccc;
   position:sticky; /* Make the header sticky */
   top: 0; /* Stick the header to the top */
-  z-index: 1000; /* Ensure the header stays above other content */
+  z-index: 1001; /* Ensure the header stays above other content */
   flex-wrap: wrap;
 }
 
@@ -370,9 +371,23 @@ p {
 }
 
 .register-form h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
   text-align: center;
 }
+
+
+.register-form img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+
 
 .register-form input,
 .register-form select {
@@ -407,6 +422,7 @@ p {
 .register-form button:hover {
   background-color: #1c7ed6;
 }
+
 
 .login-link{
   text-decoration: none;
@@ -626,3 +642,8 @@ p {
   }
   
 } */
+
+
+
+
+
