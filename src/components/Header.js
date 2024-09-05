@@ -1,7 +1,7 @@
 // Header.js
 import React from 'react';
 
-const Header = ({ isLoggedIn, loggedInUser, handleLogout }) => {
+const Header = ({ isLoggedIn, loggedInUser,setShowPasswordChangePopup, handleLogout }) => {
   return (
     <header>
       <div className='header-icon'>
@@ -23,7 +23,7 @@ const Header = ({ isLoggedIn, loggedInUser, handleLogout }) => {
             src="https://img.icons8.com/ios-glyphs/30/user--v1.png"
             alt="user--v1"
           />
-          <span>Welcome, {loggedInUser}</span>
+          <span onClick={() => setShowPasswordChangePopup(true)}>Welcome, {loggedInUser}</span>
           <button onClick={handleLogout}>
             Logout
             <img

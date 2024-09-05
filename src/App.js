@@ -1,18 +1,17 @@
-// App.js
-import React from 'react';
-import './App.css';
-import Header from './components/Header';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
-import Sidebar from './components/Sidebar';
-import JobseekersContainer from './components/JobseekersContainer';
-import JobseekerModal from './components/JobseekerModal';
-import { useAuth } from './hooks/useAuth';
-import { useJobseekers } from './hooks/useJobseekers';
-import { ToastContainer } from 'react-toastify';
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
+import Sidebar from "./components/Sidebar";
+import JobseekersContainer from "./components/JobseekersContainer";
+import JobseekerModal from "./components/JobseekerModal";
+import PasswordChangePopup from "./components/PasswordChangePopup";
+import { useAuth } from "./hooks/useAuth";
+import { useJobseekers } from "./hooks/useJobseekers";
+import { ToastContainer } from "react-toastify";
 
-const App=()=> {
-
+const App = () => {
   const {
     isLoggedIn,
     username,
@@ -24,6 +23,15 @@ const App=()=> {
     loggedInUser,
     handleLogin,
     handleLogout,
+    showPasswordChangePopup,
+    setShowPasswordChangePopup,
+    currentPassword,
+    setCurrentPassword,
+    newPassword1,
+    setNewPassword1,
+    confirmNewPassword,
+    setConfirmNewPassword,
+    handleChangePassword,
   } = useAuth();
 
   const {
@@ -56,14 +64,22 @@ const App=()=> {
     handleExperienceFilter,
     handleSearch,
     searchQuery,
+    isLoading, // Access isLoading state
+    currentJobseekers,
+    paginate,
+    currentPage,
+    itemsPerPage,
   } = useJobseekers(isLoggedIn);
-
 
   return (
     <div className="App">
+      <Header
+        isLoggedIn={isLoggedIn}
+        loggedInUser={loggedInUser}
+        setShowPasswordChangePopup={setShowPasswordChangePopup}
+        handleLogout={handleLogout}
+      />
       <ToastContainer />
-      <Header isLoggedIn={isLoggedIn} loggedInUser={loggedInUser} handleLogout={handleLogout} />
-
       {!isLoggedIn ? (
         isRegistering ? (
           <RegisterForm
@@ -91,19 +107,30 @@ const App=()=> {
         )
       ) : (
         <div className="main-content">
-          <Sidebar userType={userType}
-                  filteredJobseekers={filteredJobseekers}
-                  experienceRange={experienceRange}
-                   handleExperienceFilter={handleExperienceFilter}
-               />
-          <JobseekersContainer
-            jobseekers={jobseekers}
-            userType={userType}
-            setShowAddJobseeker={setShowAddJobseeker}
-            filteredJobseekers={filteredJobseekers}
-            handleSearch={handleSearch}
-            searchQuery={searchQuery}
-          />
+          {isLoading ? (
+            <div className="loading"></div>
+          ) : (
+            <>
+              <Sidebar
+                userType={userType}
+                filteredJobseekers={filteredJobseekers}
+                experienceRange={experienceRange}
+                handleExperienceFilter={handleExperienceFilter}
+              />
+              <JobseekersContainer
+                jobseekers={jobseekers}
+                currentJobseekers={currentJobseekers}
+                userType={userType}
+                setShowAddJobseeker={setShowAddJobseeker}
+                paginate={paginate}
+                currentPage={currentPage}
+                filteredJobseekers={filteredJobseekers}
+                handleSearch={handleSearch}
+                searchQuery={searchQuery}
+                itemsPerPage={itemsPerPage}
+              />
+            </>
+          )}
         </div>
       )}
 
@@ -122,8 +149,20 @@ const App=()=> {
         successMessage={successMessage}
         modalError={modalError}
       />
+
+      <PasswordChangePopup
+        show={showPasswordChangePopup}
+        onClose={() => setShowPasswordChangePopup(false)}
+        currentPassword={currentPassword}
+        setCurrentPassword={setCurrentPassword}
+        newPassword1={newPassword1}
+        setNewPassword1={setNewPassword1}
+        confirmNewPassword={confirmNewPassword}
+        setConfirmNewPassword={setConfirmNewPassword}
+        handleChangePassword={handleChangePassword}
+      />
     </div>
   );
-}
+};
 
 export default App;
