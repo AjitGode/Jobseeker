@@ -20,11 +20,11 @@ const PasswordChangePopup = ({
         <h2>Change Password</h2>
         <form onSubmit={(e) => { e.preventDefault(); handleChangePassword(); }}>
           <label>
-            Current Password:
+            Current Password (Read Only):
             <input
-              type="password"
+              type="text" // Making the current password visible
               value={currentPassword}
-              onChange={(e) => setCurrentPassword(e.target.value)}
+              readOnly // Making the input read-only
               required
             />
           </label>

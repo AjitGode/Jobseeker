@@ -1,13 +1,16 @@
 /* App.css */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-body,html {
+
+body,
+html {
   font-family: Arial, sans-serif;
   /* background-color: #f4f4f4;  */
   background: url('../assets/pexels-andreea.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh; /* Adjust as necessary */
+  height: 100vh;
+  /* Adjust as necessary */
   backdrop-filter: blur(10px);
   margin: 0;
   padding: 0;
@@ -22,7 +25,7 @@ body,html {
 }
 
 .sidebar {
-  position:fixed;
+  position: fixed;
   width: 250px;
   background-color: #a6cbf7;
   color: white;
@@ -44,7 +47,7 @@ body,html {
   margin-bottom: 10px;
 }
 
-.sidebar h2{
+.sidebar h2 {
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -88,7 +91,8 @@ body,html {
 }
 
 .content {
-  margin-left: 270px; /* Sidebar width + some margin */
+  margin-left: 270px;
+  /* Sidebar width + some margin */
   padding: 20px;
   flex: 1;
   min-height: 150vh;
@@ -106,7 +110,7 @@ body,html {
 
 .App button {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
   background-color: #0af191;
   color: white;
@@ -116,24 +120,24 @@ body,html {
   cursor: pointer;
 }
 
-.App button img{
+.App button img {
   width: 20px;
   height: 20px;
-  margin-left: 10px; 
+  margin-left: 10px;
   display: flex;
-  align-items: center; 
-  
+  align-items: center;
+
 }
 
-.App span{
+.App span {
   display: flex;
-  align-items: center; 
+  align-items: center;
   font-size: 16px;
   font-weight: bold;
   margin-right: 10px;
 }
 
-.App h1{
+.App h1 {
   font-size: 24px;
   font-weight: bold;
   margin: auto;
@@ -141,10 +145,10 @@ body,html {
 
 }
 
-.header-icon{
- display: flex;
- justify-content: space-between;
- align-items: center;
+.header-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .logo {
@@ -153,22 +157,24 @@ header .logo {
   /* margin-right: 10px; */
 }
 
-.header-user{
+.header-user {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   cursor: pointer;
 }
-.user-logo{
+
+.user-logo {
   display: flex;
-  align-items: center; 
+  align-items: center;
   width: 20px;
   height: 20px;
   margin-right: 10px;
- 
+
 
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -179,9 +185,12 @@ header {
   color: white;
   font-size: 16px;
   border-bottom: 2px solid #ccc;
-  position:sticky; /* Make the header sticky */
-  top: 0; /* Stick the header to the top */
-  z-index: 1001; /* Ensure the header stays above other content */
+  position: sticky;
+  /* Make the header sticky */
+  top: 0;
+  /* Stick the header to the top */
+  z-index: 1001;
+  /* Ensure the header stays above other content */
   flex-wrap: wrap;
 }
 
@@ -200,7 +209,7 @@ button {
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  text-align: left; /* Align content to the left */
+  /* text-align: left;  */
 }
 
 .login-form h2 {
@@ -208,10 +217,11 @@ button {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  text-align: center; /* Center the heading */
+  text-align: center;
+  /* Center the heading */
 }
 
-.login-form img{
+.login-form img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,28 +229,34 @@ button {
   width: 30px;
   height: 30px;
 }
-.login-form input {
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
   width: calc(100% - 20px);
   max-width: 400px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   outline: none;
   padding: 10px;
   margin: 10px 0;
   font-size: 16px;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect overall width */
 }
-.login-form input:focus{
+
+.login-form input:focus {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   border-color: #007bff;
 
 }
+
 .login-form button {
   display: block;
   justify-content: center;
   align-items: center;
-  margin: 10px auto; /* Center the button */
+  margin: 10px auto;
+  /* Center the button */
   width: calc(100% - 20px);
   max-width: 300px;
   border-radius: 20px;
@@ -258,9 +274,10 @@ button {
 .login-form button:hover {
   background-color: #1c7ed6;
 }
-.register-link{
+
+.register-link {
   display: block;
-  margin: 10px auto; 
+  margin: 10px auto;
   max-width: 300px;
   margin-top: 20px;
   text-decoration: none;
@@ -269,6 +286,7 @@ button {
   align-items: center;
   text-align: center;
 }
+
 .error {
   color: red;
   margin-top: 10px;
@@ -291,7 +309,7 @@ button {
   transition: .5s ease;
 }
 
-.jobseekers-container .jobseeker-card:hover{
+.jobseekers-container .jobseeker-card:hover {
   transform: scale(1.05);
   border-color: #007bff;
 }
@@ -319,7 +337,8 @@ h3 {
   margin: 10px 0;
   font-size: 20px;
 }
-.blur{
+
+.blur {
   filter: blur(4px);
 }
 
@@ -328,29 +347,34 @@ p {
   font-size: 16px;
 }
 
-.add-jobseeker-button{
+.add-jobseeker-button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
- margin-left: 35px;
- margin-bottom: 30px;
- padding: auto;
+  margin-left: 35px;
+  margin-bottom: 30px;
+  padding: auto;
 }
-.add-jobseeker-button img{
+
+.add-jobseeker-button img {
   margin-right: 10px;
 }
 
+
+/* Search Bar */
 .search-bar-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  padding: 0 15px; /* Add some padding on mobile */
+  padding: 0 15px;
+  /* Add some padding on mobile */
 }
 
 .search-bar {
   width: 100%;
-  max-width: 400px; /* Limit the width of the search bar */
+  max-width: 400px;
+  /* Limit the width of the search bar */
   padding: 10px 15px;
   border-radius: 20px;
   border: 1px solid #ccc;
@@ -358,13 +382,15 @@ p {
   outline: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   box-sizing: border-box;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add box shadow */
 }
 
 .search-bar:focus {
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
   border-color: #007bff;
 }
+
 /* Add this to your App.css */
 
 .register-form {
@@ -386,7 +412,7 @@ p {
 }
 
 
-.register-form img{
+.register-form img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,7 +422,8 @@ p {
 }
 
 
-.register-form input,
+.register-form input[type="text"],
+input[type="password"],
 .register-form select {
   width: calc(100% - 20px);
   max-width: 400px;
@@ -405,8 +432,14 @@ p {
   padding: 10px;
   margin: 10px 0;
   font-size: 16px;
+  outline: none;
   border: 2px solid #ccc;
   box-sizing: border-box;
+}
+
+.register-form input:focus {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
 }
 
 .register-form button {
@@ -416,7 +449,8 @@ p {
   border-radius: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px auto; /* Center the button */
+  margin: 10px auto;
+  /* Center the button */
   padding: 10px 20px;
   background-color: #1e90ff;
   color: white;
@@ -431,9 +465,10 @@ p {
 }
 
 
-.login-link{
+.login-link {
   text-decoration: none;
 }
+
 .success {
   color: green;
   margin-top: 10px;
@@ -459,6 +494,7 @@ p {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -480,6 +516,7 @@ p {
     transform: translateY(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -556,11 +593,11 @@ p {
     width: 90%;
     padding: 15px;
   }
-  
+
   .modal-content h2 {
     font-size: 20px;
   }
-  
+
   .modal-content button {
     font-size: 14px;
   }
@@ -572,29 +609,30 @@ p {
   .sidebar {
     min-width: fit-content;
     min-height: fit-content;
-    position: relative; 
+    position: relative;
     transform: translateX(0);
     flex-wrap: wrap;
-    flex-direction: row; 
-    justify-content: space-between; 
-    background-color: #a6cbf7; 
-    padding: 10px; 
-    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #a6cbf7;
+    padding: 10px;
+    display: flex;
   }
 
-  .sidebar > * {
-    margin-right: 20px; 
+  .sidebar>* {
+    margin-right: 20px;
   }
 
   .content {
     margin-left: 0;
-    margin-top: 0; 
+    margin-top: 0;
   }
 
   .main-content {
     flex-direction: column;
   }
-  .sidebar h2{
+
+  .sidebar h2 {
     justify-content: center;
     align-items: center;
   }
@@ -614,7 +652,8 @@ p {
 
 /* Preloader Container */
 .loading {
-  position: fixed; /* Makes sure the loader covers the entire viewport */
+  position: fixed;
+  /* Makes sure the loader covers the entire viewport */
   top: 0;
   left: 0;
   width: 100%;
@@ -622,8 +661,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Light overlay with opacity */
-  z-index: 9999; /* Ensure it stays on top of other content */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Light overlay with opacity */
+  z-index: 9999;
+  /* Ensure it stays on top of other content */
 }
 
 /* Spinner Animation */
@@ -631,8 +672,10 @@ p {
   content: '';
   width: 60px;
   height: 60px;
-  border: 6px solid #3498db; /* Color of the spinner */
-  border-top-color: transparent; /* Transparent top to create spinning effect */
+  border: 6px solid #3498db;
+  /* Color of the spinner */
+  border-top-color: transparent;
+  /* Transparent top to create spinning effect */
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -642,6 +685,7 @@ p {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -718,10 +762,12 @@ p {
   z-index: 1002;
   animation: fadeIn 0.3s ease;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -741,6 +787,7 @@ p {
     transform: translateY(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -773,7 +820,8 @@ p {
   color: #555;
 }
 
-.popup-content input[type="password"] {
+.popup-content input[type="password"],
+input[type="text"] {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -786,4 +834,7 @@ p {
   border-color: #007bff;
   outline: none;
 }
-
+.popup-content input[type="text"]:focus {
+  border-color: #ff0000;
+  outline: none;
+}
